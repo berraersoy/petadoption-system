@@ -1,0 +1,241 @@
+/* --- GENEL AYARLAR --- */
+:root {
+    --primary-color: #8e44ad; /* Mor */
+    --accent-color: #e67e22;  /* Turuncu */
+    --bg-color: #f8f9fa;      /* Açık Gri Arkaplan */
+    --text-color: #333;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+   
+    
+        background-color: #d0abed; 
+        
+      
+
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        line-height: 1.6;
+    
+   
+
+    color: var(--text-color);
+  
+    cursor: url('https://cur.cursors-4u.net/nature/nat-10/nat984.cur'), auto;
+    
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- NAVBAR (Üst Menü) --- */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h2 { color: var(--white); font-weight: 600; letter-spacing: 1px; }
+
+.nav-links a {
+    color: rgba(255,255,255,0.8);
+    margin-left: 20px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.user-info {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* --- KONTEYNER & KARTLAR --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.pet-card {
+    background: var(--white);
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.pet-card:hover {
+    transform: translateX(50px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.pet-icon {
+    font-size: 60px;
+    background: #ecf0f1;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.pet-card h3 { color: var(--primary-color); margin-bottom: 5px; }
+.pet-card p { color: #7f8c8d; font-size: 0.9rem; margin-bottom: 5px; }
+
+.status { 
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* --- BUTONLAR --- */
+.btn {
+    display: block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover { background-color: #d35400; }
+
+.btn-approve { background-color: var(--success-color); color: white; padding: 6px 12px; border-radius: 4px; border:none; cursor:pointer;}
+.btn-reject { background-color: var(--danger-color); color: white; padding: 6px 12px; border-radius: 4px; border:none; cursor:pointer;}
+
+/* --- FORMLAR (Giriş, Kayıt, Başvuru) --- */
+form {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button[type="submit"]:hover { background-color: #34495e; }
+
+/* --- TABLOLAR (Admin Paneli) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+th { background-color: var(--primary-color); color: white; padding: 15px; text-align: left; }
+td { padding: 15px; border-bottom: 1px solid #eee; color: #555; }
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #f1f1f1; }
+
+/* --- RESPONSIVE (Mobil Uyum) --- */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; text-align: center; }
+    .nav-links { margin-top: 15px; }
+    .nav-links a { margin: 0 10px; }
+}
+/* --- RESİM VE KUTU DÜZELTMELERİ --- */
+
+/* Detay Sayfasındaki Ana Kutu */
+.detail-card {
+    max-width: 600px;       /* Genişliği en fazla 600px olsun (daha geniş olamaz) */
+    width: 90%;             
+    margin: 40px auto;      
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Güzel bir gölge */
+}
+
+/* Detay Sayfasındaki Resim */
+.detail-img {
+    width: 100%;            /* Kutunun genişliğine tam uysun */
+    height: 300px;          /* Yüksekliği sabit olsun (çok uzun olmasın) */
+    object-fit: cover;      /* Resmi kutuya sığdırırken orantısını bozma (kırp) */
+    border-radius: 10px;    /* Köşeleri yuvarlat */
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Ana Sayfadaki Küçük Resimler */
+.pet-img {
+    width: 100%;
+    height: 200px;          /* Kart yüksekliği kadar olsun */
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* --- DOSYA YÜKLEME BUTONU DÜZELTMESİ --- */
+input[type="file"] {
+    background-color: #f1f1f1; /* Açık gri zemin */
+    border: 2px dashed #ccc !important; /* Kesik çizgili çerçeve */
+    padding: 15px !important; /* İç boşluk */
+    height: auto; /* Yüksekliği otomatik ayarla */
+    cursor: pointer;
+    color: #333; /* Yazı rengi */
+}
+
+input[type="file"]:hover {
+    background-color: #e2e6ea; /* Üzerine gelince koyulaşsın */
+    border-color: #aaa !important;
+}
